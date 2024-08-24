@@ -1,1 +1,35 @@
-<p>presentation works!</p>
+<header class="bg_animate">
+    <div class="header_nav">
+        <div class="contenedor">
+            <img src="https://primefaces.org/cdn/primeng/images/primeng.svg" height="40" class="mr-2" />
+            <nav>
+                <a [routerLink]="'/home'">Inicio</a>
+                <a [routerLink]="['/product/lista-productos']">Productos</a>
+                <a [routerLink]="'/documentation'">Documentación</a>
+            </nav>
+        </div>
+    </div>
+
+    <section class="banner contenedor">
+        <section class="banner_title">
+            <h2>Bienvenido a la<br>prueba tecnica</h2>
+            <a [routerLink]="'/product/lista-productos'" class="llamanos">Ingresar a la prueba!</a>
+        </section>
+        <div class="banner_img">
+            <img src="assets/img/Angular.png" alt="angular">
+        </div>
+    </section>
+
+    <div class="burbujas">
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+    </div>
+</header>

@@ -13,6 +13,7 @@ import { MessagesModule } from 'primeng/messages';
 import { ConfirmationService, MessageService } from 'primeng/api';
 
 
+
 @NgModule({
   declarations: [ProductListComponent],
   imports: [
@@ -26,7 +27,6 @@ import { ConfirmationService, MessageService } from 'primeng/api';
     ToolbarModule,
     ConfirmDialogModule,
     DialogModule,
-    
   ],
   providers: [
     ConfirmationService, 
