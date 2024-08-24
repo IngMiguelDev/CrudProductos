@@ -33,10 +33,10 @@
         <tr>
             <td>{{ product.name }}</td>
             <td>{{ product.description }}</td>
-            <td>{{ product.price | currency: '$' }}</td>
+            <td>{{ product.price | currency: 'COP' }}</td>
             <td>
                 <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="editProduct(product)"></button>
-                <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-error" (click)="deleteProduct(product)"></button>
+                <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger mr-2"  (click)="deleteProduct(product)"></button>
             </td>
         </tr>
     </ng-template>
@@ -44,5 +44,5 @@
         <div class="flex align-items-center justify-content-between">En total hay {{ products ? products.length : 0 }} productos.</div>
     </ng-template>
 </p-table>
-
+<p-confirmDialog></p-confirmDialog>
 </div>

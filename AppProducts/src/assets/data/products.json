@@ -1,0 +1,64 @@
+{
+	"data": [
+		{
+			"id": "1",
+			"name": "Reloj casio",
+			"description": "Reloj resistente",
+			"price": 65000
+		},
+		{
+			"id": "2",
+			"name": "Maleta de estudio",
+			"description": "Maleta perfecta para regreso a clases",
+			"price": 72000
+		},
+        {
+            "id": "3",
+            "name": "Auriculares Bluetooth",
+            "description": "Auriculares inalámbricos con cancelación de ruido",
+            "price": 98000
+          },
+          {
+            "id": "4",
+            "name": "Mochila para laptop",
+            "description": "Mochila con compartimentos acolchados para laptop y accesorios",
+            "price": 85000
+          },
+          {
+            "id": "5",
+            "name": "Gafas de sol polarizadas",
+            "description": "Gafas de sol con protección UV y diseño moderno",
+            "price": 42000
+          },
+          {
+            "id": "6",
+            "name": "Smartwatch",
+            "description": "Reloj inteligente con monitoreo de actividad y notificaciones",
+            "price": 120000
+          },
+          {
+            "id": "7",
+            "name": "Cámara digital compacta",
+            "description": "Cámara pequeña y ligera para capturar fotos de alta calidad",
+            "price": 150000
+          },
+          {
+            "id": "8",
+            "name": "Lámpara LED portátil",
+            "description": "Lámpara recargable con varias intensidades de luz",
+            "price": 35000
+          },
+          {
+            "id": "9",
+            "name": "Silla ergonómica",
+            "description": "Silla de oficina ajustable para máxima comodidad",
+            "price": 200000
+          },
+          {
+            "id": "10",
+            "name": "Teclado mecánico",
+            "description": "Teclado con retroiluminación RGB y teclas programables",
+            "price": 78000
+          }
+    ]
+}
