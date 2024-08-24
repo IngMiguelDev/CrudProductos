@@ -3,7 +3,7 @@
     <p-toolbar styleClass="mb-4 gap-2">
         <ng-template pTemplate="left">
             <button pButton pRipple label="Agregar producto" icon="pi pi-plus" class="p-button-success mr-2"
-                (click)="openNew()"></button>
+                (onClick)="openNew()"></button>
         </ng-template>
     </p-toolbar>
     <br>
@@ -41,3 +41,9 @@
     </p-table>
     <p-confirmDialog></p-confirmDialog>
 </div>
+
+<p-dialog [modal]="true" [(visible)]="openDialog" [style]="{ width: '55rem' }">
+    <!-- <app-product-form></app-product-form> -->
+
+    <h1>hola</h1>
+</p-dialog>

@@ -1,1 +1,28 @@
-<p>product-form works!</p>
+<span class="p-text-secondary block mb-5">Información adicional de la nanny.</span>
+    <form [formGroup]="productForm">
+        <div class="flex align-items-center gap-3 mt-3">
+            <label for="nameProduct" class="font-semibold w-7.5rem">Nombre</label>
+            <input pInputText id="nameProduct" formControlName="name" placeholder="Escriba" class="flex-auto"
+                autocomplete="off" />
+        </div>
+        
+        <div class="flex align-items-center gap-3 mt-3">
+            <label for="price" class="font-semibold w-6rem">Precio</label>
+            <input pInputNumber id="price" formControlName="price" placeholder="0" class="flex-auto" min="0" />
+        </div>
+        <div class="flex align-items-center gap-3 mt-3">
+            <label for="description" class="font-semibold w-6rem">Descripción</label>
+            <input pInputTextarea id="descripcion" formControlName="description" placeholder="Escriba" class="flex-auto"
+                autocomplete="off" />
+        </div>
+
+        <div class="flex align-items-center gap-3 mt-3">
+            <label for="stock" class="font-semibold w-6rem">Stock</label>
+            <input pInputNumber id="stock1" formControlName="stock" placeholder="0" class="flex-auto" min="0" />
+        </div>
+        
+        <div class="flex justify-content-end gap-3">
+            <p-button label="Cancelar" severity="secondary"/>
+            <p-button label="Guardar" (onClick)="addProduct()" />
+        </div>
+    </form>
