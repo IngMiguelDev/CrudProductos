@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductFormRoutingModule } from './product-form-routing.module';
-import { ProductFormComponent } from './product-form.component';
-import { MessageService } from 'primeng/api';
+import { ProductDetailComponent } from './product-detail.component';
+import { ProductDetailRoutingModule } from './product-detail-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
@@ -11,11 +10,12 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 
 
+
 @NgModule({
-  declarations: [ProductFormComponent],
+  declarations: [ProductDetailComponent],
   imports: [
     CommonModule,
-    ProductFormRoutingModule,
+    ProductDetailRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     ButtonModule,
@@ -23,7 +23,6 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     InputTextModule,
     InputNumberModule,
     InputTextareaModule,
-  ],
-  providers: [MessageService]
+  ]
 })
-export class ProductFormModule { }
+export class ProductDetailModule { }
