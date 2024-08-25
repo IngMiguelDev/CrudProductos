@@ -14,16 +14,10 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { ProductFormComponent } from './product-form/product-form.component';
-import { ProductListComponent } from './product-list/product-list.component';
-
 
 @NgModule({
   declarations: [
-     ProductDetailComponent,
-     ProductFormComponent,
-     ProductListComponent
+    
   ],
   imports: [
     CommonModule,

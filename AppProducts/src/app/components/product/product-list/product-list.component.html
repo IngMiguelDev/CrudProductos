@@ -3,7 +3,7 @@
     <p-toolbar styleClass="mb-4 gap-2">
         <ng-template pTemplate="left">
             <button pButton pRipple label="Agregar producto" icon="pi pi-plus" class="p-button-success mr-2"
-                (onClick)="openNew()"></button>
+                routerLink="/product/form/add"></button>
         </ng-template>
     </p-toolbar>
     <br>
@@ -28,7 +28,7 @@
                 <td>{{ product.price | currency: 'COP' }}</td>
                 <td>
                     <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"
-                        pTooltip="Editar producto" (click)="editProduct(product)"></button>
+                        pTooltip="Editar producto" routerLink="/product/form/edit/{{product.id}}"></button>
                     <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger mr-2"
                         pTooltip="Eliminar" (click)="deleteProduct(product)"></button>
                 </td>
