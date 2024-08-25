@@ -8,7 +8,7 @@ import { ToastModule } from 'primeng/toast';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextareaModule } from 'primeng/inputtextarea';
-
+import { CardModule } from 'primeng/card';
 
 
 @NgModule({
@@ -23,6 +23,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     InputTextModule,
     InputNumberModule,
     InputTextareaModule,
+    CardModule
+
   ]
 })
 export class ProductDetailModule { }
