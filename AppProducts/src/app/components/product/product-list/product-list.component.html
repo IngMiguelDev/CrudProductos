@@ -10,7 +10,7 @@
     <p-table #dt [value]="products" [rows]="10" [columns]="cols" [paginator]="true" [globalFilterFields]="['name']"
         [tableStyle]="{ 'min-width': '75rem' }" [rowHover]="true" dataKey="id"
         currentPageReportTemplate="Mostrando del {first} al {last} de {totalRecords} entradas"
-        [showCurrentPageReport]="true">
+        [showCurrentPageReport]="true" [loading]="loading">
 
         <ng-template pTemplate="header">
             <tr>
@@ -30,7 +30,7 @@
                     <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"
                         pTooltip="Editar producto" routerLink="/product/form/edit/{{product.id}}"></button>
                     <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger mr-2"
-                        pTooltip="Eliminar" (click)="deleteProduct(product)"></button>
+                        pTooltip="Eliminar" (click)="deleteProduct(product.id)"></button>
                 </td>
             </tr>
         </ng-template>

@@ -30,7 +30,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
   ],
   providers: [
     ConfirmationService, 
-    MessageService
+    MessageService,
   ]
 })
 export class ProductListModule { }

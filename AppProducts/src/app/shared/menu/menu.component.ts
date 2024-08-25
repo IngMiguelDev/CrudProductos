@@ -15,7 +15,7 @@ export class MenuComponent  implements OnInit {
   getMenuItems() {
     this.items = [
       {
-        label: 'Documentación',
+        label: 'Recursos',
         icon: 'pi pi-fw pi-file',
         scaped: false,
         items: [
@@ -23,6 +23,21 @@ export class MenuComponent  implements OnInit {
             label: 'Primeng',
             icon: 'pi pi-fw pi-prime',
             url: 'https://www.primefaces.org/primeng-v16-lts/installation'
+          },
+          {
+            label: 'Sequelize',
+            icon: 'pi pi-fw pi-server',
+            url: 'https://sequelize.org/docs/v6/getting-started/'
+          },
+          {
+            label: 'PrimeFlex',
+            icon: 'pi pi-fw pi-prime',
+            url: 'https://sequelize.org/docs/v6/getting-started/'
+          },
+          {
+            label: 'Repo de productos',
+            icon: 'pi pi-fw pi-github',
+            url: 'https://github.com/IngMiguelDev/CrudProductos/tree/develop'
           },
         ]
       }]

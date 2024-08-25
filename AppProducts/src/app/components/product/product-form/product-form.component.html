@@ -1,28 +1,55 @@
-<span class="p-text-secondary block mb-5">Información adicional de la nanny.</span>
-    <form [formGroup]="productForm">
-        <div class="flex align-items-center gap-3 mt-3">
-            <label for="nameProduct" class="font-semibold w-7.5rem">Nombre</label>
-            <input pInputText id="nameProduct" formControlName="name" placeholder="Escriba" class="flex-auto"
-                autocomplete="off" />
-        </div>
-        
-        <div class="flex align-items-center gap-3 mt-3">
-            <label for="price" class="font-semibold w-6rem">Precio</label>
-            <input pInputNumber id="price" formControlName="price" placeholder="0" class="flex-auto" min="0" />
-        </div>
-        <div class="flex align-items-center gap-3 mt-3">
-            <label for="description" class="font-semibold w-6rem">Descripción</label>
-            <input pInputTextarea id="descripcion" formControlName="description" placeholder="Escriba" class="flex-auto"
-                autocomplete="off" />
-        </div>
+<p-toast></p-toast>
+<div class="surface-card p-4 shadow-2 flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden border-round">
+    <div class="flex flex-column align-items-center justify-content-center">
 
-        <div class="flex align-items-center gap-3 mt-3">
-            <label for="stock" class="font-semibold w-6rem">Stock</label>
-            <input pInputNumber id="stock1" formControlName="stock" placeholder="0" class="flex-auto" min="0" />
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="text-900 text-3xl font-medium mb-3">{{operation}} producto</div>
+
+            </div>
+
+            <form [formGroup]="productForm" (ngSubmit)="addAndEditProduct()">
+                <label for="name" class="block text-900 font-medium mb-3">Nombre</label>
+                <input id="name1" type="text" formControlName="name" required [minlength]="3"
+                    placeholder="Escriba el nombre del producto" pInputText class="w-full mb-3">
+                <div *ngIf="productForm.get('name')?.touched && productForm.get('name')?.invalid">
+                    <small *ngIf="productForm.get('name')?.errors?.['required']" class="text-danger">
+                        El nombre es obligatorio.
+                    </small>
+                    <small *ngIf="productForm.get('name')?.errors?.['minlength']" class="text-danger">
+                        El nombre debe tener al menos 3 caracteres.
+                    </small>
+                </div>
+                <br>
+                <label for="price1" class="block text-900 font-medium mb-3">Precio</label>
+                <p-inputNumber [style]="{width: '100%'}" formControlName="price" inputId="currency-cop" mode="currency"
+                    currency="COP" [minFractionDigits]="0" locale="es-CO" class="w-full mb-3"> </p-inputNumber>
+
+                    <div *ngIf="productForm.get('price')?.hasError('required') && productForm.get('price')?.touched"  class="text-danger">
+                        El precio es obligatorio
+                      </div>
+                <br>
+                <label for="stock1" class="block text-900 font-medium mb-3">Stock</label>
+                <p-inputNumber [style]="{width: '100%'}" formControlName="stock" [min]="0"  mode="decimal" class="w-full mb-3"> </p-inputNumber>
+
+                <br>
+                <label for="description1" class="block text-900 font-medium mb-3">Descripción</label>
+                <textarea rows="5" cols="30" pInputTextarea formControlName="description"
+                    class="w-full mb-3"></textarea>
+
+                <div class="formgrid grid">
+                    <div class="field col-12 md:col-6">
+                        <button pButton pRipple label="Volver" (click)="goBack()" icon="pi pi-times"
+                            class="w-full p-button-outlined p-button-secondary"></button>
+
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <button pButton pRipple label="Guardar" [disabled]="productForm.invalid" type="submit"
+                            icon="pi pi-check" class="w-full p-button-success"></button>
+
+                    </div>
+                </div>
+            </form>
         </div>
-        
-        <div class="flex justify-content-end gap-3">
-            <p-button label="Cancelar" severity="secondary"/>
-            <p-button label="Guardar" (onClick)="addProduct()" />
-        </div>
-    </form>
+    </div>
+</div>

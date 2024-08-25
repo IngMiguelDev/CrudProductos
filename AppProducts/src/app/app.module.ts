@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MessageService } from 'primeng/api';
-import { ProductMockupService } from './services/productMockup.service';
+import { ProductService } from './services/product.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';;
 import { StyleClassModule } from 'primeng/styleclass';
@@ -23,7 +23,7 @@ import { SharedModule } from './shared/shared.module';
   ],
   providers: [
     MessageService,
-    ProductMockupService
+    ProductService
   ],
   bootstrap: [AppComponent]
 })

@@ -4,7 +4,7 @@ import { Table } from 'primeng/table';
 import { Column } from 'src/app/models/column';
 import { ExportColumn } from 'src/app/models/export';
 import { Product } from 'src/app/models/products';
-import { ProductMockupService } from 'src/app/services/productMockup.service';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -18,38 +18,44 @@ export class ProductListComponent implements OnInit {
   cols!: Column[];
   exportColumns!: ExportColumn[];
   products!: Product[];
-  openDialog: boolean = false;
   product!: Product;
+  loading!: boolean;
 
   constructor(
     private confirmationService: ConfirmationService,
     private messageService: MessageService,
-    private productMockupService: ProductMockupService
+    private _productService: ProductService
    ) {}
 
   ngOnInit(): void {
-    this.productMockupService.getProducts().subscribe({next: response =>{
-      if(response && response.data){
-        this.products = response.data;
+    this.getListProducts();
+  }
+
+  getListProducts(){
+    this.loading = true;
+
+    setTimeout(() => {
+      this._productService.getProductsApi().subscribe({next: response =>{
+        console.log(response);
+          this.products = response;
+          this.loading = false;
+       }, error: err=>{
+        this.messageService.add({ severity: 'error', summary: 'Servicio temporalmente fuera de servicio', life: 3000 });
       }
-
-     }, error: err=>{
-      this.messageService.add({ severity: 'error', summary: 'Servicio temporalmente fuera de servicio', life: 3000 });
-
-    }
-    
-    });
+      
+      });
+    }, 1000);
+   
   }
 
-  openNew(){
-    this.openDialog = true;
-  }
+  
   editProduct(product: Product){
     this.product = { ...product };
-    this.openDialog = true;
+
   }
 
-  deleteProduct(product: Product){
+  deleteProduct(id: number){
+    this.loading = true;
     this.confirmationService.confirm({
       message: '¿Estás seguro que deseas eliminar el producto?',
       header: '¡Eliminar el producto!',
@@ -57,8 +63,15 @@ export class ProductListComponent implements OnInit {
       acceptLabel: 'Si seguro',
       rejectLabel: 'Cancelar',
       accept: () => {
-          this.products = this.products.filter((val) => val.id !== product.id);
-          this.messageService.add({ severity: 'success', summary: 'Eliminado con éxito', life: 3000 });
+          this._productService.deleteProductsApi(id).subscribe({next: response =>{
+            this.messageService.add({ severity: 'success', summary: 'Eliminado con éxito', life: 3000 });
+            this.getListProducts();
+    
+          },error: err=>{
+            this.messageService.add({ severity: 'error', summary: 'Servicio temporalmente fuera de servicio', life: 3000 });
+            this.loading = false;
+          }});
+          
       }
   });
   }
