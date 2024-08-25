@@ -42,7 +42,6 @@ export class ProductListComponent implements OnInit {
   }
 
   openNew(){
-    debugger
     this.openDialog = true;
   }
   editProduct(product: Product){
