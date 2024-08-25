@@ -4,7 +4,7 @@ import { Table } from 'primeng/table';
 import { Column } from 'src/app/models/column';
 import { ExportColumn } from 'src/app/models/export';
 import { Product } from 'src/app/models/products';
-import { ProductMockupService } from 'src/app/services/productMockup.service';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -24,18 +24,20 @@ export class ProductListComponent implements OnInit {
   constructor(
     private confirmationService: ConfirmationService,
     private messageService: MessageService,
-    private productMockupService: ProductMockupService
+    private productService: ProductService
    ) {}
 
   ngOnInit(): void {
-    this.productMockupService.getProducts().subscribe({next: response =>{
-      if(response && response.data){
-        this.products = response.data;
-      }
+    this.getListProducts();
+  }
+
+  getListProducts(){
+    this.productService.getProductsApi().subscribe({next: response =>{
+      console.log(response);
+        this.products = response;
 
      }, error: err=>{
       this.messageService.add({ severity: 'error', summary: 'Servicio temporalmente fuera de servicio', life: 3000 });
-
     }
     
     });
