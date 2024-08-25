@@ -5,7 +5,8 @@ import { ProductFormComponent } from './product-form.component';
 
 @NgModule({
     imports: [RouterModule.forChild([
-        { path: '', component: ProductFormComponent }
+        { path: 'add', component: ProductFormComponent },
+        { path: 'edit/:id', component: ProductFormComponent }
     ])],
     exports: [RouterModule]
 })
