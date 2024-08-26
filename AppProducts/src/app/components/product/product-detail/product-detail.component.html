@@ -1,1 +1,26 @@
-<p>product-detail works!</p>
+<div *ngIf="products"
+    class="surface-card p-4 shadow-2 flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden border-round">
+    <div class="flex flex-column align-items-center justify-content-center">
+
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="text-900 text-3xl font-medium mb-3">Detalle del producto</div>
+            </div>
+
+
+            <p-card header="{{products.name}}" subheader="Precio: {{ products.price | currency:'COP' }}">
+                <ng-template pTemplate="content">
+                    <p>{{ products.description }}</p>
+                    <p>Stock: {{ products.stock_quantity }}</p>
+                    <p>Fecha de creación: {{ products.createdAt | date:'longDate' }}</p>
+                    <p>Fecha de actualización: {{ products.updatedAt | date:'longDate' }}</p>
+                </ng-template>
+                <ng-template pTemplate="footer">
+                    <button pButton pRipple label="Volver" icon="pi pi-arrow-left" class="p-button-outlined p-button-rounded p-button-danger" (click)="goBack()"></button>
+                </ng-template>
+            </p-card>
+
+        </div>
+
+    </div>
+</div>

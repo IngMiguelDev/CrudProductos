@@ -1,0 +1,22 @@
+.p-card {
+    margin-bottom: 2rem;
+}
+
+.p-card-footer button {
+    width: 100%;
+}
+
+.container {
+    border-radius: 12px;
+    border: 2px solid #007BFF;
+    margin: 20px auto;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.container:hover {
+    border-color: #0056b3;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}

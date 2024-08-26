@@ -18,7 +18,7 @@
                 <th pSortableColumn="description" style="min-width:10rem">Descripción<p-sortIcon
                         field="description"></p-sortIcon></th>
                 <th pSortableColumn="price">Precio<p-sortIcon field="price"></p-sortIcon></th>
-                <th>Acciones</th>
+                <th style="min-width:10rem">Acciones</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-product>
@@ -29,6 +29,8 @@
                 <td>
                     <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"
                         pTooltip="Editar producto" routerLink="/product/form/edit/{{product.id}}"></button>
+                    <button pButton pRipple icon="pi pi-eye" class="p-button-rounded p-button-info mr-2"
+                        pTooltip="Ver detalle" routerLink="/product/detalle-producto/{{product.id}}"></button>    
                     <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger mr-2"
                         pTooltip="Eliminar" (click)="deleteProduct(product.id)"></button>
                 </td>

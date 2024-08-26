@@ -9,6 +9,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { CardModule } from 'primeng/card';
+import { StyleClassModule } from 'primeng/styleclass';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { CardModule } from 'primeng/card';
     InputTextModule,
     InputNumberModule,
     InputTextareaModule,
-    CardModule
+    CardModule,
+    StyleClassModule
 
   ]
 })

@@ -1,1 +1,43 @@
-<p>documentation works!</p>
+<body>
+    <header>
+        <h1>Guía de Instalación y Ejecución del Proyecto</h1>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>Instalación de Dependencias</h2>
+            <p>Para comenzar, debes instalar las siguientes dependencias en tu proyecto Angular:</p>
+            <ol>
+                <li><strong>PrimeNG:</strong> Biblioteca de componentes UI para Angular.</li>
+                <li><strong>PrimeFlex:</strong> Biblioteca de utilidades CSS para PrimeNG.</li>
+                <li><strong>Angular 16:</strong> Framework para desarrollar aplicaciones web.</li>
+            </ol>
+            <p>Ejecuta los siguientes comandos en tu terminal para instalar las dependencias:</p>
+            <pre><code>npm install primeng&#64;^16.2.0 primeflex&#64;^3.0.0</code></pre>
+            <p>Nota: Asegúrate de tener <code>Angular 16</code> ya instalado. Si no, puedes actualizarlo con:</p>
+            <pre><code>ng update &#64;angular/cli &#64;angular/core</code></pre>
+        </section>
+
+        <section>
+            <h2>Ejecutar el Servidor de Angular</h2>
+            <p>Para ejecutar el servidor de desarrollo y ver tu aplicación en acción, utiliza el siguiente comando:</p>
+            <pre><code>ng serve</code></pre>
+            <p>Esto iniciará el servidor de desarrollo en <code>http://localhost:4200</code> de forma predeterminada.</p>
+        </section>
+
+        <section>
+            <h2>Ejecutar Pruebas Unitarias</h2>
+            <p>Para ejecutar las pruebas unitarias en tu proyecto, utiliza el siguiente comando:</p>
+            <pre><code>ng test</code></pre>
+            <p>Esto ejecutará las pruebas unitarias usando Karma y Jasmine. Asegúrate de que todas las pruebas estén correctamente configuradas para obtener resultados precisos.</p>
+        </section>
+
+        <section>
+            <h2>Clonar el Proyecto desde GitHub</h2>
+            <p>El proyecto está alojado en GitHub y puedes clonarlo desde la rama <code>develop</code>. Usa el siguiente comando para clonar el repositorio:</p>
+            <pre><code>git clone -b develop https://github.com/IngMiguelDev/CrudProductos.git</code></pre>
+            <p>Una vez clonado el repositorio, navega al directorio del proyecto y ejecuta el siguiente comando para instalar los paquetes de Node y las dependencias del proyecto:</p>
+            <pre><code>npm install</code></pre>
+        </section>
+    </div>
+</body>
