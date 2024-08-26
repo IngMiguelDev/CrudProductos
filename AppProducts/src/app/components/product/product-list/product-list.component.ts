@@ -72,6 +72,8 @@ export class ProductListComponent implements OnInit {
             this.loading = false;
           }});
           
+      }, reject: ()=>{
+        this.loading = false;
       }
   });
   }
